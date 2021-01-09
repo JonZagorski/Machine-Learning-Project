@@ -11,12 +11,13 @@ import datetime as dt
 import yfinance as yf
 from sklearn.linear_model import LinearRegression
 
-data = "AAPL"
+data = "WMB"
 
 def get_historical(quote):
     end = datetime.now()
     start = datetime(end.year-2,end.month,end.day)
     data = yf.download(quote, start=start, end=end)
+    print(data)
     df = pd.DataFrame(data=data)
     df.to_csv(''+quote+'.csv')
     if(df.empty):
@@ -101,6 +102,13 @@ def LIN_REG_ALGO(df):
         print("##############################################################################")
         print()
         return df, lr_pred, forecast_set, mean, error_lr
+
+
+# ******MOVING AVERAGES*******#
+#The variables we will be using at this stage, 
+# are the moving averages for the past three and nine days.
+#data['MA3'] = data['Value'].shift(1).rolling(window=3).mean()
+#data['MA9']= data['Value'].shift(1).rolling(window=9).mean()
 
 
 #Try-except to check if valid stock symbol
