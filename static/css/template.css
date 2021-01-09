@@ -1,2 +1,5 @@
-Please add the css here. Flask will look here for the css for the html
-I have provided here in /static/css. I will make the js folders soon.
+#myChart {
+    height: 500px;
+    width: 600px;
+    margin: 0 auto;
+  }
