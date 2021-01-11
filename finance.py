@@ -42,15 +42,15 @@ def get_historical(quote):
 
 def LIN_REG_ALGO(df):
         #No of days to be forcasted in future
-        forecast_out = int(7)
+        forecast_out = int(1)
         #Price after n days
         df['Close after n days'] = df['Close'].shift(-forecast_out)
         #New df with only relevant data
         df_new=df[['Close','Close after n days']]
-
         #Structure data for train, test & forecast
+
         #lables of known data, discard last 35 rows
-        y =np.array(df_new.iloc[:-forecast_out,-1])
+        y=np.array(df_new.iloc[:-forecast_out,-1])
         y=np.reshape(y, (-1,1))
         #all cols of known data except lables, discard last 35 rows
         X=np.array(df_new.iloc[:-forecast_out,0:-1])
@@ -84,7 +84,7 @@ def LIN_REG_ALGO(df):
         plt2.plot(y_test_pred,label='Predicted Price')
         
         plt2.legend(loc=4)
-        plt2.savefig('static/LR.png')
+        plt2.savefig('LR.png')
         plt2.close(fig)
         
         error_lr = math.sqrt(mean_squared_error(y_test, y_test_pred))
@@ -97,7 +97,7 @@ def LIN_REG_ALGO(df):
         lr_pred=forecast_set[0,0]
         print()
         print("##############################################################################")
-        print("Tomorrow's ",quote," Closing Price Prediction by Linear Regression: ",lr_pred)
+        print("Tomorrow's ",data," Closing Price Prediction by Linear Regression: ",lr_pred)
         print("Linear Regression RMSE:",error_lr)
         print("##############################################################################")
         print()
@@ -137,4 +137,7 @@ def insertintotable():
         df2 = pd.concat([df2, df], axis=1)
         df=df2
 
+        df, lr_pred, forecast_set,mean,error_lr=LIN_REG_ALGO(df)
+
 insertintotable()
+LIN_REG_ALGO()
