@@ -13,6 +13,12 @@ from sklearn.linear_model import LinearRegression
 
 data = "WMB"
 
+import sys
+
+data = 'VLO'
+print("##############")
+print(data)
+print("###########") 
 def get_historical(quote):
     end = datetime.now()
     start = datetime(end.year-2,end.month,end.day)
