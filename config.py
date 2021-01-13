@@ -9,12 +9,16 @@ class Config(object):
     SECRET_KEY = 'this-really-needs-to-be-changed'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> jz
 =======
     
 >>>>>>> jz
+=======
+    
+>>>>>>> 42adb05fa49f8a4a4f4255d25050e0ec1c332c7b
 
 
 class ProductionConfig(Config):

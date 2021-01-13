@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 click==7.1.2
 Flask==1.1.1
 gunicorn==20.0.4
@@ -9,6 +10,8 @@ MarkupSafe==1.1.1
 =======
 =======
 >>>>>>> jz
+=======
+>>>>>>> 42adb05fa49f8a4a4f4255d25050e0ec1c332c7b
 alembic==1.4.3
 click==7.1.2
 Flask==1.1.1
@@ -26,7 +29,10 @@ python-editor==1.0.4
 six==1.15.0
 SQLAlchemy==1.3.22
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> jz
 =======
 >>>>>>> jz
+=======
+>>>>>>> 42adb05fa49f8a4a4f4255d25050e0ec1c332c7b
 Werkzeug==1.0.1
