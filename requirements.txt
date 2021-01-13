@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 click==7.1.2
 Flask==1.1.1
 gunicorn==20.0.4
@@ -6,6 +7,8 @@ itsdangerous==1.1.0
 Jinja2==2.11.2
 MarkupSafe==1.1.1
 =======
+=======
+>>>>>>> jz
 alembic==1.4.3
 click==7.1.2
 Flask==1.1.1
@@ -22,5 +25,8 @@ python-dotenv==0.15.0
 python-editor==1.0.4
 six==1.15.0
 SQLAlchemy==1.3.22
+<<<<<<< HEAD
+>>>>>>> jz
+=======
 >>>>>>> jz
 Werkzeug==1.0.1

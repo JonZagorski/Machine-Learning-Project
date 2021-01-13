@@ -1,6 +1,12 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "python.pythonPath": "C:\\Users\\Jon\\anaconda3\\envs\\PythonData\\python.exe"
+=======
+    "python.pythonPath": "c:\\Users\\Jon\\final-project\\env\\Scripts\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+>>>>>>> jz
 =======
     "python.pythonPath": "c:\\Users\\Jon\\final-project\\env\\Scripts\\python.exe",
     "python.linting.pylintEnabled": true,
