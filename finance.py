@@ -3,47 +3,47 @@ from numpy.lib.function_base import insert
 import pandas as pd
 import numpy as np
 from pandas import datetime
-import math, random
+import math
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 from datetime import datetime
 import datetime as dt
 import yfinance as yf
 from sklearn.linear_model import LinearRegression
-
-data = "WMB"
-
 import sys
 
-data = 'VLO'
+quote = 'PSX'
 print("##############")
-print(data)
 print("###########") 
-def get_historical(quote):
+def get_historical(ticker):
     end = datetime.now()
     start = datetime(end.year-2,end.month,end.day)
-    data = yf.download(quote, start=start, end=end)
-    print(data)
+    data = yf.download(ticker, start=start, end=end)
     df = pd.DataFrame(data=data)
-    df.to_csv(''+quote+'.csv')
+    df.to_csv(''+ticker+'.csv')
+    print(df)
     if(df.empty):
+        print("Hello")
         from alpha_vantage.timeseries import TimeSeries
         ts = TimeSeries(key='I8LY0JP5DQ4DECI9',output_format='pandas')
-        data, meta_data = ts.get_daily_adjusted(symbol='NSE:'+quote, outputsize='full')
+        data, meta_data = ts.get_daily_adjusted(symbol='NSE:'+ticker, outputsize='full')
         #Format df
         #Last 2 yrs rows => 502, in ascending order => ::-1
         data=data.head(503).iloc[::-1]
         data=data.reset_index()
         #Keep Required cols only
         df=pd.DataFrame()
-        df['Date']=data['date']
-        df['Open']=data['1. open']
-        df['High']=data['2. high']
-        df['Low']=data['3. low']
-        df['Close']=data['4. close']
-        df['Adj Close']=data['5. adjusted close']
-        df['Volume']=data['6. volume']
-        df.to_csv(''+quote+'.csv',index=False)
+        print(df)
+        df['Date']=data['Date']
+        df['Open']=data['Open']
+        df['High']=data['High']
+        df['Low']=data['Low']
+        df['Close']=data['Close']
+        df['hello']=data['Adj Close']
+        df['Volume']=data['Volume']
+        df.to_csv(''+ticker+'.csv',index=False)
+    else:
+        print("exit")
     return
 
 def LIN_REG_ALGO(df):
@@ -109,28 +109,19 @@ def LIN_REG_ALGO(df):
         print()
         return df, lr_pred, forecast_set, mean, error_lr
 
-
-# ******MOVING AVERAGES*******#
-#The variables we will be using at this stage, 
-# are the moving averages for the past three and nine days.
-#data['MA3'] = data['Value'].shift(1).rolling(window=3).mean()
-#data['MA9']= data['Value'].shift(1).rolling(window=9).mean()
-
-
 #Try-except to check if valid stock symbol
 def insertintotable():
-
     try:
-        get_historical(data)
+        get_historical(quote)
     except:
         return "hello"
     else:
     
         #************** PREPROCESSUNG ***********************
-        df = pd.read_csv(''+data+'.csv')
+        df = pd.read_csv(''+quote+'.csv')
         print()
         print("##############################################################################")
-        print("Today's",data,"Stock Data: ")
+        print("Today's",quote,"Stock Data: ")
         today_stock=df.iloc[-1:]
         print(today_stock)
         print("##############################################################################")
@@ -138,7 +129,7 @@ def insertintotable():
         df = df.dropna()
         code_list=[]
         for i in range(0,len(df)):
-            code_list.append(data)
+            code_list.append(quote)
         df2=pd.DataFrame(code_list,columns=['Code'])
         df2 = pd.concat([df2, df], axis=1)
         df=df2

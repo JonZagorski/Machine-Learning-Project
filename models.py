@@ -11,7 +11,7 @@ def train(df):
     2. Polynomial Kernel
     3. Radial Basis Function Kernel
     4. Sigmoid Kernel
-    The RFC model is also implemented.
+    The RFC model is also implemented. 
     
     The hyperparameters are set default in each case.
     The score of the model on the Dev/Test set is returned to the main script.

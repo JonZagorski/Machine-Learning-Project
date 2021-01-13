@@ -30,7 +30,7 @@ def addFeatures(df):
             Indicates the rise/fall of the stock price for a day wrt the previous day.
     '''
     df['High-Low'] = df['High']-df['Low']
-    df['PCT_change'] = df['Adj Close'].pct_change(5)
+    df['PCT_change'] = df['Adj_Close'].pct_change(5)
     df['MDAV5'] = (df.loc[:,'Close']).rolling(window=5).mean()
     df['EMA5'] = (df.loc[:, 'Close']).ewm(ignore_na=False, min_periods=5, com=5, adjust=True).mean()
     df['EMA26'] = (df.loc[:, 'Close']).ewm(ignore_na=False, min_periods=26, com=26, adjust=True).mean()
@@ -39,10 +39,10 @@ def addFeatures(df):
     df['MACD_SignalLine'] = (df.loc[:, 'MACD']).ewm(ignore_na=False, min_periods=0, com=9, adjust=True).mean()
     df = df.drop(['EMA26', 'EMA12'], axis=1)
     plot.feature_plot(df)
-    df['ReturnOut'] = df['Adj Close'].shift(-1)
+    df['ReturnOut'] = df['Adj_Close'].shift(-1)
     df = df.dropna()
     df.loc[:, 'Change'] = df.loc[:, 'ReturnOut'] - df.loc[:, 'Adj Close'] > 0
-    X = df.loc[:, 'Adj Close':'MACD_SignalLine']
+    X = df.loc[:, 'Adj_Close':'MACD_SignalLine']
     y = df.loc[:, 'Change']
     return [X, y]
 
