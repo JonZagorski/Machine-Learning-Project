@@ -7,6 +7,10 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'this-really-needs-to-be-changed'
+<<<<<<< HEAD
+=======
+    
+>>>>>>> jz
 
 
 class ProductionConfig(Config):
