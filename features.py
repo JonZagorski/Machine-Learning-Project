@@ -41,7 +41,7 @@ def addFeatures(df):
     plot.feature_plot(df)
     df['ReturnOut'] = df['Adj_Close'].shift(-1)
     df = df.dropna()
-    df.loc[:, 'Change'] = df.loc[:, 'ReturnOut'] - df.loc[:, 'Adj Close'] > 0
+    df.loc[:, 'Change'] = df.loc[:, 'ReturnOut'] - df.loc[:, 'Adj_Close'] > 0
     X = df.loc[:, 'Adj_Close':'MACD_SignalLine']
     y = df.loc[:, 'Change']
     return [X, y]
