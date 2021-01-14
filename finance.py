@@ -12,7 +12,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler
 import sys
 
-quote = 'PSX'
+quote = 'DVN'
 print("##############")
 print("###########") 
 def get_historical(ticker):
@@ -20,7 +20,7 @@ def get_historical(ticker):
     start = datetime(end.year-2,end.month,end.day)
     data = yf.download(ticker, start=start, end=end)
     df = pd.DataFrame(data=data)
-    df = df.rename(columns={"Date":"Date","Open":"Open","High":"High","Low":"Low","Close":"Close","Adj Close":"Adj_Close","Volume":"Volume"})
+    df = df.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close","Adj Close":"adj_close","Volume":"volume"})
     df.to_csv(''+ticker+'.csv')
     print(df)
     # if(df.empty):
@@ -51,9 +51,9 @@ def LIN_REG_ALGO(df):
         #No of days to be forcasted in future
         forecast_out = int(7)
         #Price after n days
-        df['Close after n days'] = df['Close'].shift(-forecast_out)
+        df['Close after n days'] = df['close'].shift(-forecast_out)
         #New df with only relevant data
-        df_new=df[['Close','Close after n days']]
+        df_new=df[['close','Close after n days']]
 
         #Structure data for train, test & forecast
         #lables of known data, discard last 35 rows
