@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 
 
 
-con = psycopg2.connect(insert database url )
+con = psycopg2.connect("postgresql://postgres:jh0njr&p3nny@database-1.c84rdrfagztk.us-east-1.rds.amazonaws.com/postgres")
 
 cursor = con.cursor()
 
