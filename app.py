@@ -16,9 +16,9 @@ db = SQLAlchemy(app)
 
 
 
-# con = psycopg2.connect("postgresql://postgres:jh0njr&p3nny@database-1.c84rdrfagztk.us-east-1.rds.amazonaws.com/postgres")
+con = psycopg2.connect("postgresql://postgres:jh0njr&p3nny@database-1.c84rdrfagztk.us-east-1.rds.amazonaws.com/postgres")
 
-# cursor = con.cursor()
+cursor = con.cursor()
 
 @app.route("/")
 def home():
@@ -32,11 +32,11 @@ def about():
 def etl():
     return render_template("etl.html")
 
-# @app.route("/api", methods=['GET'])
-# def api():
-#      cursor.execute("select array_to_json(array_agg(row_to_json(t))) from (select * from tickers) t")
-#      result = cursor.fetchall()
-#      return jsonify(result)
+@app.route("/api", methods=['GET'])
+def api():
+     cursor.execute("select array_to_json(array_agg(row_to_json(t))) from (select * from tickers) t")
+     result = cursor.fetchall()
+     return jsonify(result)
 
 
 
