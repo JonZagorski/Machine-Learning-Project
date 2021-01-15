@@ -1,5 +1,5 @@
 import os
-import requests
+
 from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import psycopg2
