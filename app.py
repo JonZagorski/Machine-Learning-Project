@@ -32,11 +32,11 @@ def about():
 def etl():
     return render_template("etl.html")
 
-@app.route("/api", methods=['GET'])
-def api():
-     cursor.execute("select array_to_json(array_agg(row_to_json(t))) from (select * from tickers) t")
-     result = cursor.fetchall()
-     return jsonify(result)
+# @app.route("/api", methods=['GET'])
+# def api():
+#      cursor.execute("select array_to_json(array_agg(row_to_json(t))) from (select * from tickers) t")
+#      result = cursor.fetchall()
+#      return jsonify(result)
 
 
 
