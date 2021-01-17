@@ -12,7 +12,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler
 import sys
 
-quote = 'DVN'
+#quote = ['WMB','PSX', 'FANG', 'COP', 'XEC', 'PXD', 'EPD', 'GLNG', 'NOG', 'DVN']
 print("##############")
 print("###########") 
 def get_historical(ticker):
@@ -20,9 +20,10 @@ def get_historical(ticker):
     start = datetime(end.year-2,end.month,end.day)
     data = yf.download(ticker, start=start, end=end)
     df = pd.DataFrame(data=data)
+
     df = df.rename(columns={"Date":"date","Open":"open","High":"high","Low":"low","Close":"close","Adj Close":"adj_close","Volume":"volume"})
     df.to_csv(''+ticker+'.csv')
-    print(df)
+    #print(df)
     # if(df.empty):
     #     print("Hello")
     #     from alpha_vantage.timeseries import TimeSeries
@@ -51,9 +52,9 @@ def LIN_REG_ALGO(df):
         #No of days to be forcasted in future
         forecast_out = int(7)
         #Price after n days
-        df['Close after n days'] = df['close'].shift(-forecast_out)
+        df['Close after 7 days'] = df['close'].shift(-forecast_out)
         #New df with only relevant data
-        df_new=df[['close','Close after n days']]
+        df_new=df[['close','Close after 7 days']]
 
         #Structure data for train, test & forecast
         #lables of known data, discard last 35 rows
@@ -66,9 +67,9 @@ def LIN_REG_ALGO(df):
         
         #Traning, testing to plot graphs, check accuracy
         X_train=X[0:int(0.8*len(df)),:]
-        X_test=X[int(0.8*len(df)):,:]
+        X_test=X[int(0.2*len(df)):,:]
         y_train=y[0:int(0.8*len(df)),:]
-        y_test=y[int(0.8*len(df)):,:]
+        y_test=y[int(0.2*len(df)):,:]
         
         # Feature Scaling===Normalization
         #from sklearn.preprocessing import MinMaxScaler
@@ -112,7 +113,7 @@ def LIN_REG_ALGO(df):
         lr_pred=forecast_set[0,0]
         print()
         print("##############################################################################")
-        print("Tomorrow's ",quote," Closing Price Prediction by Linear Regression: ",lr_pred)
+        #print("Tomorrow's ",symbols," Closing Price Prediction by Linear Regression: ",lr_pred)
         print("Linear Regression RMSE:",error_lr)
         print("##############################################################################")
         print("Accuracy " +str(accuracy))
@@ -121,29 +122,31 @@ def LIN_REG_ALGO(df):
 
 
 #Try-except to check if valid stock symbol
-def insertintotable():
+def insertintotable(symbol):
     try:
-        get_historical(quote)
+        get_historical(symbol)
     except:
         return "hello"
     else:
-    
         #************** PREPROCESSUNG ***********************
-        df = pd.read_csv(''+quote+'.csv')
-        print()
-        print("##############################################################################")
-        print("Today's",quote,"Stock Data: ")
-        today_stock=df.iloc[-1:]
-        print(today_stock)
-        print("##############################################################################")
-        print()
-        df = df.dropna()
-        code_list=[]
-        for i in range(0,len(df)):
-            code_list.append(quote)
-        df2=pd.DataFrame(code_list,columns=['Code'])
-        df2 = pd.concat([df2, df], axis=1)
-        df=df2
-        df, lr_pred, forecast_set,mean,error_lr=LIN_REG_ALGO(df)
-        print(df, lr_pred, forecast_set,mean,error_lr)
-insertintotable()
+            df = pd.read_csv(''+symbol+'.csv')
+            #print()
+            print("##############################################################################")
+            print("Today's",symbol,"Stock Data: ")
+            today_stock=df.iloc[-1:]
+            print(today_stock)
+            print("##############################################################################")
+            print()
+            df = df.dropna()
+            code_list=[]
+            for i in range(0,len(df)):
+                code_list.append(symbol)
+            df2=pd.DataFrame(code_list,columns=['Ticker'])
+            df2 = pd.concat([df2, df], axis=1)
+            df=df2
+            df, lr_pred, forecast_set,mean,error_lr=LIN_REG_ALGO(df)
+            print()
+            #df['lr_pred']
+            #df.to_csv(''+symbol+'.csv')
+            print(df, lr_pred, forecast_set,mean,error_lr)
+            #print(lr_pred)

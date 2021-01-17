@@ -1,5 +1,7 @@
 from sklearn import svm
 import features
+import finance
+from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
 from sklearn.ensemble import AdaBoostClassifier as abc
 from sklearn.ensemble import VotingClassifier
@@ -21,6 +23,7 @@ def train(df):
     X_train, X_test = features.featureScaling(X_train, X_test)
     
     model_slinear = svm.SVC(kernel='linear')
+
     # Create the GridSearch estimator along with a parameter object containing the values to adjust
     from sklearn.model_selection import GridSearchCV
     param_grid = {'C': [1, 5, 10],
@@ -31,8 +34,13 @@ def train(df):
     # Make predictions with the hypertuned model
     predictions = grid.predict(X_test)
     print('Test Acc: %.3f' % grid.score(X_test, y_test))
+
     model_slinear.fit(X_train, y_train)
     score_slinear = model_slinear.score(X_test, y_test)
+
+    model_clf = LinearRegression()
+    model_clf.fit(X_train, y_train)
+    score_lf = model_clf.score(X_test, y_test) 
 
     model_spoly = svm.SVC(kernel='poly')
     model_spoly.fit(X_train, y_train)
@@ -58,4 +66,4 @@ def train(df):
     model_vc.fit(X_train, y_train)
     score_vc = model_vc.score(X_test, y_test)
 
-    return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc
+    return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc, score_lf
