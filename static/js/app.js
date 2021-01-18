@@ -1,4 +1,4 @@
-const loadData = d3.csv('VLO.csv').then(data => {
+const loadData = d3.csv('NOG.csv').then(data => {
     console.log(data)
     console.log(data[0].Date)
     //const chartResultsData = data['chart']['result'][0];
