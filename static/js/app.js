@@ -1,7 +1,4 @@
 
-// JS for feather svg icons
-<script>feather.replace()</script>
-
 // JS for dropdown
 
 var subjectObject = {
@@ -44,7 +41,7 @@ var subjectObject = {
 
 
   //Dropdown
-  <script>
+
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -64,4 +61,3 @@ window.onclick = function(event) {
     }
   }
 }
-</script>
