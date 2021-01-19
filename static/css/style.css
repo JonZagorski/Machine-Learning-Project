@@ -8,6 +8,7 @@ body {
   padding-right: 20px;
   padding-bottom: 10px;
   padding-left: 20px;
+  
 }
 
 h1 {
@@ -44,12 +45,18 @@ h3 {
   vertical-align: text-bottom;
 }
 
+
+.table {
+  float: left;
+  /* display: inline-flex; */
+}
+
 /***********************************
  * Sidebar
  **************************************/
 
 .sidebar {
-  position: fixed;
+  position: fluid;
   top: 0;
   /* rtl:raw:
   right: 0;
@@ -58,8 +65,10 @@ h3 {
   /* rtl:remove */
   left: 0;
   z-index: 100; /* Behind the navbar */
-  padding: 48px 0 0; /* Height of navbar */
+  padding: 60px 0 30px; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  /* display: inline-flex; */
+  float: left;
 }
 
 @media (max-width: 767.98px) {
@@ -148,7 +157,9 @@ h3 {
 .dropdown {
   padding: 10px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+  position: relative;
+  display: inline-flex;
+  /* float: left; */
 }
 
 .dropbtn {
@@ -164,10 +175,6 @@ h3 {
     background-color: #2980B9;
   }
   
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
   
   .dropdown-content {
     display: none;

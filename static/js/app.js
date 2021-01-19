@@ -1,4 +1,4 @@
-const loadData = d3.csv('NOG.csv').then(data => {
+const loadData = d3.csv('../VLO.csv').then(data => {
     console.log(data)
     console.log(data[0].Date)
     //const chartResultsData = data['chart']['result'][0];
@@ -47,8 +47,8 @@ const xMin = d3.min(data, d => {
   const yScale = d3
     .scaleLinear()
     .domain([yMin - 5, yMax])
-    .range([height, 0])};
-
+    .range([height, 0])
+    // .range([height, 0])};
 // create the axes component
 svg
   .append('g')
@@ -80,6 +80,7 @@ svg
  .attr('stroke-width', '1.5')
  .attr('d', line);
 
+};
 const movingAverage = (data, numberOfPricePoints) => {
     return data.map((row, index, total) => {
       const start = Math.max(0, index - numberOfPricePoints);
