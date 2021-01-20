@@ -47,7 +47,7 @@ const xMin = d3.min(data, d => {
   const yScale = d3
     .scaleLinear()
     .domain([yMin - 5, yMax])
-    .range([height, 0])};
+    .range([height, 0]);
 
 // create the axes component
 svg
@@ -59,7 +59,7 @@ svg
   .append('g')
   .attr('id', 'yAxis')
   .attr('transform', `translate(${width}, 0)`)
-  .call(d3.axisRight(yScale));
+  .call(d3.axisRight(yScale))};
 
 // generates close price line chart when called
 const line = d3
