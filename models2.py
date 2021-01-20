@@ -1,3 +1,4 @@
+from matplotlib.pyplot import close
 import pandas as pd
 import numpy as np
 import yfinance as yf
@@ -14,7 +15,7 @@ def get_historical(symbol):
     start = datetime(end.year-2,end.month,end.day)
     data = yf.download(symbol, start=start, end=end)
     df = pd.DataFrame(data=data)
-    print(df)
+    #print(df)
     from sklearn.model_selection import train_test_split
 
     # df['Day'] = df.index
@@ -24,18 +25,20 @@ def get_historical(symbol):
     # prices = prices.drop(['Date'], axis=1)
     # print(prices)
 
-    prices = df.iloc[:, 0:3]
-    prices = prices.drop(['Open', 'High'], axis=1)
+    prices = df.iloc[:, 0:4]
+    prices = prices.drop(['Open', 'High', 'Low'], axis=1)
     prices.reset_index(level=0, inplace=True)
-    print(prices)
     prices["timestamp"] = prices["Date"].values.astype(float)
     prices = prices.drop(['Date'], axis=1)
+    print(prices)
+
 
     dataset = prices.values
     X = dataset[:,1].reshape(-1,1)
-    print(X)
+    #print(X)
     Y = dataset[:,0:1]
-    print(Y)
+    #print(Y)
+    #print(dataset)
 
     validation_size = 0.2
     seed = 7
@@ -66,7 +69,12 @@ def get_historical(symbol):
     from sklearn.model_selection import KFold
     from sklearn.model_selection import cross_val_score
 
+
+    def Average(lst): 
+        return sum(lst) / len(lst)
+
     # evaluate each model in turn
+    averages = []
     results = []
     names = []
     for name, model in models:
@@ -75,9 +83,12 @@ def get_historical(symbol):
         #print(cv_results)
         results.append(cv_results)
         names.append(name)
-    msg = "%s: %f (%f)" % (names, results.mean(), results.std())
-    print(msg)
+    for result in results:
+        averages.append(Average(result))
+    print(names)
+    print(averages)
 
+    
     # Future prediction, add dates here for which you want to predict
     dates = ["2021-01-18", "2021-01-19", "2021-01-20", "2021-01-21", "2021-01-22"]
     #convert to time stamp
@@ -96,18 +107,25 @@ def get_historical(symbol):
     model.fit(X_train, Y_train)
     # predict
     predictions = model.predict(X)
-    print(mean_squared_error(Y, predictions))
-
+    df = pd.DataFrame(data=predictions)
+    df['Date'] = X
+    df['Actual Close Price'] = Y
+    print(df)
     # %matplotlib inline 
-    fig= plt.figure(figsize=(24,12))
+    fig= plt.figure(figsize=(12,12))
     plt.plot(X,Y)
     plt.plot(X,predictions)
     plt.show()
+    #print(type(predictions))
+    print(mean_squared_error(Y, predictions))
+    
+
+
 
     # GBR
     from sklearn import ensemble
     # Fit regression model
-    params = {'n_estimators': 500, 'max_depth': 4, 'min_samples_split': 2,
+    params = {'n_estimators': 150, 'max_depth': 4, 'min_samples_split': 2,
             'learning_rate': 0.01, 'loss': 'ls'}
     model = ensemble.GradientBoostingRegressor(**params)
     model.fit(X_train, Y_train)
@@ -123,5 +141,7 @@ def get_historical(symbol):
     print("Mean squared error: %.2f"% mean_squared_error(Y_validation, y_predicted))
     # Explained variance score: 1 is perfect prediction
     print('Test Variance score: %.2f' % r2_score(Y_validation, y_predicted))
+
+
 
     return predictions
