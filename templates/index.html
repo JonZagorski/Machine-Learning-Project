@@ -35,113 +35,7 @@
             <!--Feather Icon JS -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     
-    <!-- <style>
-      body {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      }
-      .nav-item {
-        font-size: 20px;
-        padding: 10px;
-        font-weight: 600;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      }
-
-      .dropdown {
-        padding: 10px;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-      }
-      /* .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      } */
-
-      /* @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      } */
-      
-      .dropbtn {
-        background-color: #3498DB;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-      }
-
-      .dropbtn:hover, .dropbtn:focus {
-        background-color: #2980B9;
-      }
-
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-
-      .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-      }
-
-      .dropdown a:hover {background-color: #ddd;}
-
-      .show {display: block;}
-
-      .btn-social {
-        height: 2.5rem;
-        width: 2.5rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border-radius: 100%;
-      }
-
-      /* Style all font awesome icons */
-      .fa {
-        padding: 20px;
-        font-size: 30px;
-        width: 50px;
-        text-align: center;
-        text-decoration: none;
-      }
-
-      /* Add a hover effect if you want */
-      .fa:hover {
-        opacity: 0.7;
-      }
-
-      /* Set a specific color for each brand */
-
-      /* Github */
-      .fa-github {
-        background: #000000;
-        color: white;
-      }
-
-      /* LinkedIn */
-      .fa-linkedin-square {
-        background:#0066CC;
-        color: white;
-      }
-    </style> -->
+    
 </head>
 
 <body>
@@ -155,8 +49,9 @@
     </div>
   </header>
  
-  <div class="container-fluid">
-    <div class="row">
+  <!-- <div class="container-fluid"> -->
+  <div class="row">
+    <div class="col-8"><col-4></col-4>
       <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
@@ -187,11 +82,39 @@
           </ul>   
         </div>
       </nav>
-    </div>     
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    </div>  
+    <div class="col-12"><col-4></col-4>
+      <div class="dropdown">
+        <button class="dropbtn"><strong>Choose a Stock </strong></button>
+        <div class="dropdown-content">
+          <a href="#">Williams Cos. (WMB)</a>
+                <a href="#">Phillips 66 (PSX)</a>
+                <a href="#">Diamondback Energy (FANG)</a>
+                <a href="#">ConocoPhillips (COP)</a>
+                <a href="#">Cimarex Energy Co. (XEC)</a>
+                <a href="#">Pioneer Natural Resources (PXD)</a>
+                <a href="#">Enterprise Products Partners LP (EPD)</a>
+                <a href="#">Golar LNG Limited (GLNG)</a>
+                <a href="#">Northern Oil & Gas (NOG)</a>
+                <a href="#">Devon Energy Corp. (DVN)</a>
+        </div>
+    </div>
+    <div class="graphs">
+      <div class="col-xs-12  col-md-9">
+        <div id="graphs">
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>
+          <!-- We append our chart here. -->
+        </div>
+      </div>
+    </div>
+  </div>
+      
+        
+    
+    <!-- <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn"><strong>Choose a Stock </strong></i></button>
+          <button onclick="myFunction()" class="dropbtn"><strong>Choose a Stock </strong></button>
             <div id="myDropdown" class="dropdown-content">
               <a href="#">Williams Cos. (WMB)</a>
               <a href="#">Phillips 66 (PSX)</a>
@@ -205,7 +128,7 @@
               <a href="#">Devon Energy Corp. (DVN)</a>
             </div>
         </div>
-      </div>
+      </div> -->
       
       <!-- We append our graphs here. -->
       <!--<canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>-->
