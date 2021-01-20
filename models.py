@@ -11,7 +11,7 @@ def train(df):
     2. Polynomial Kernel
     3. Radial Basis Function Kernel
     4. Sigmoid Kernel
-    The RFC model is also implemented.
+    The RFC model is also implemented. 
     
     The hyperparameters are set default in each case.
     The score of the model on the Dev/Test set is returned to the main script.
@@ -21,6 +21,16 @@ def train(df):
     X_train, X_test = features.featureScaling(X_train, X_test)
     
     model_slinear = svm.SVC(kernel='linear')
+    # Create the GridSearch estimator along with a parameter object containing the values to adjust
+    from sklearn.model_selection import GridSearchCV
+    param_grid = {'C': [1, 5, 10],
+              'gamma': [0.0001, 0.001, 0.01]}
+    grid = GridSearchCV(model_slinear, param_grid, verbose=3)
+
+    grid.fit(X_train, y_train)
+    # Make predictions with the hypertuned model
+    predictions = grid.predict(X_test)
+    print('Test Acc: %.3f' % grid.score(X_test, y_test))
     model_slinear.fit(X_train, y_train)
     score_slinear = model_slinear.score(X_test, y_test)
 
@@ -48,5 +58,9 @@ def train(df):
     model_vc.fit(X_train, y_train)
     score_vc = model_vc.score(X_test, y_test)
 
+<<<<<<< HEAD
+    return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc
+>>>>>>> main
+=======
     return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc
 >>>>>>> main
