@@ -13,7 +13,7 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // Define the line
 var priceline = d3.line()
-  .x(function (d) { return x(d.date); })
+  .x(function (d) { return x(d.rt); })
   .y(function (d) { return y(d.price); });
 
 // Adds the svg canvas
@@ -29,18 +29,18 @@ var stocks = `https://final-project-stage.herokuapp.com/api`
 // Get the data
 d3.json(stocks).then(function(data)  {
   data.forEach(function (d) {
-    d.date = parseDate(d.Date);
+    d.rt = Date.parse(d.Date);
     d.price = +d.close;
   });
   // Define the axes
   var xAxis = d3.axisBottom(x)
-    .tickFormat(d3.timeFormat("%Y-%m-%d"));
+    .ticks(5);
 
   var yAxis = d3.axisLeft(y)
     .ticks(5);
 
   // Scale the range of the data
-  x.domain(d3.extent(data, function (d) { return d.date; }));
+  x.domain(d3.extent(data, function (d) { return d.rt; }));
   y.domain([0, d3.max(data, function (d) { return d.price; })]);
 
   // Nest the entries by symbol
@@ -112,19 +112,18 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // Define the axes
 var xAxis = d3.axisBottom().scale(x)
-  .ticks(5)
-  .tickFormat(d3.timeFormat("%Y-%m-%d"))
+  .ticks(5);
 
 var yAxis = d3.axisLeft().scale(y)
   .ticks(5);
 
 // Define the 1st line
 var valueline = d3.line()
-  .x(function (d) { return x(d.date); })
+  .x(function (d) { return x(d.rt); })
   .y(function (d) { return y(d.close); });
 // define the 2nd line
 var valueline2 = d3.line()
-  .x(function(d) { return x(d.date); })
+  .x(function(d) { return x(d.rt); })
   .y(function(d) { return y(d.open); });
 
 // Adds the svg canvas
@@ -141,13 +140,13 @@ var Stockdata = `https://final-project-stage.herokuapp.com/api`;
 d3.json(Stockdata).then(function(data)  {
   console.log(data)
   data.forEach(function (d) {
-    d.date = parseDate(d.Date);
+    d.rt = Date.parse(d.Date);
     d.price = +d.close;
     d.open = +d.open
   
 });
   // Scale the range of the data
-  x.domain(d3.extent(data, function (d) { return d.date; }));
+  x.domain(d3.extent(data, function (d) { return d.rt; }));
   y.domain([0, d3.max(data, function(d) {
 	  return Math.max(d.close, d.open); })]);
   
@@ -176,7 +175,7 @@ d3.json(Stockdata).then(function(data)  {
       .enter().append("path")
       .attr("class", "point")
       .attr('fill', 'red')
-      .attr("transform", function (d) { return "translate(" + x(d.date) + "," + y(d.close) + ")"; });
+      .attr("transform", function (d) { return "translate(" + x(d.rt) + "," + y(d.close) + ")"; });
   }
 
   function updatePoints(data) {
