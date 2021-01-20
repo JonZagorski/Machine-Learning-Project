@@ -17,7 +17,7 @@ var priceline = d3.line()
   .y(function (d) { return y(d.price); });
 
 // Adds the svg canvas
-var svg = d3.select("#area1")
+var svg = d3.select("graphs")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
@@ -27,7 +27,7 @@ var svg = d3.select("#area1")
 
 var stocks = `https://final-project-stage.herokuapp.com/api`
 // Get the data
-d3.json(stocks, function (error, data) {
+d3.json(stocks).then(function(data)  {
   data.forEach(function (d) {
     d.date = parseDate(d.Date);
     d.price = +d.close;
@@ -138,7 +138,7 @@ var chart2 = d3.select("#area2")
 
 var Stockdata = `https://final-project-stage.herokuapp.com/api`;
 // Get the data
-d3.json(Stockdata, function (error, data) {
+d3.json(Stockdata).then(function(data)  {
   console.log(data)
   data.forEach(function (d) {
     d.date = parseDate(d.Date);
