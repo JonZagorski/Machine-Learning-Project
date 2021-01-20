@@ -13,7 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #app.config.from_object(os.environ['DATABASE_URL']
 db = SQLAlchemy(app)
 
-
+#test
 
 con = psycopg2.connect("postgresql://postgres:jh0njr&p3nny@database-1.c84rdrfagztk.us-east-1.rds.amazonaws.com/postgres")
 
