@@ -201,7 +201,7 @@ d3.json(Stockdata).then(function(data)  {
   }
 
   // New select element for allowing the user to select a group!
-  var $groupSelector = document.querySelector('.group-select');
+  var $groupSelector = document.querySelector('.dropdown-content');
   var groupData = getFilteredData(data, $groupSelector.value);
 
   // Enter initial points filtered by default select value set in HTML
