@@ -59,7 +59,7 @@ svg
   .append('g')
   .attr('id', 'yAxis')
   .attr('transform', `translate(${width}, 0)`)
-  .call(d3.axisRight(yScale))};
+  .call(d3.axisRight(yScale));
 
 // generates close price line chart when called
 const line = d3
@@ -136,5 +136,5 @@ svg
   .attr('width', 1)
   .attr('height', d => {
     return height - yVolumeScale(d['volume']);
-  });
+  })};
 
