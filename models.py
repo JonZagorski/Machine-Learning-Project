@@ -59,6 +59,10 @@ def train(df):
     score_vc = model_vc.score(X_test, y_test)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+    return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc
+>>>>>>> main
+=======
     return score_slinear, score_spoly, score_srbf, score_ssig, score_rfc, score_abc,  score_vc
 >>>>>>> main
 =======
