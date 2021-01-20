@@ -43,9 +43,9 @@ def addFeatures(df):
     #plot.feature_plot(df)
     df['returnout'] = df['adj_close'].shift(-1)
     df = df.dropna()
-    df.loc[:, 'change'] = df.loc[:, 'returnout'] - df.loc[:, 'adj_close'] > 0
+    df.loc[:, 'change'] = df.loc[:, 'returnout'] - df.loc[:, 'adj_close'] > 0 
     X = df.loc[:, 'adj_close':'macd_signalline']
-    y = df.loc[:, 'change']
+    y = df.loc[:, 'close']
     return [X, y]
 
 def featureScaling(train, test):
