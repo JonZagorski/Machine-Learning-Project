@@ -4,9 +4,7 @@ import features
 import output
 import finance
 import plot 
-import sys
 import pandas as pd
-import io
 
 
 symbols = ['WMB','PSX', 'FANG', 'COP', 'XEC', 'PXD', 'EPD', 'GLNG', 'NOG', 'DVN']
@@ -31,7 +29,8 @@ for symbol in symbols: #runs the models on every symbol.
     df['hour'] = df.index.hour
     df['minute'] = df.index.minute
 
-    final = output.output(df, symbol)
+    final_df = df.merge(model_prediction, on = ["Date"])
+    final = output.output(final_df, symbol)
     #plot.dataset_plot(df, symbol)
-    connection = output.pg_connection(df)
+    connection = output.pg_connection(final_df)
     #print(f"Scores of models on the dataset {symbol} (Linear, Poly, RBF, Sigmoid, RFC, AdaBoost, VotingClassifier): {[score * 100 for score in scores_models]}")
