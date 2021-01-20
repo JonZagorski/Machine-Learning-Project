@@ -19,7 +19,7 @@ def pg_connection(df):
 
     # Connect to PostgreSQL server
     postgreSQLConnection = alchemyEngine.connect()
-    postgreSQLTable = "tickers"
+    postgreSQLTable = "tickers_predictions"
 
     try:
         df.to_sql(postgreSQLTable, postgreSQLConnection, if_exists='append')

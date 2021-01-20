@@ -8,6 +8,11 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import datetime as dt
 import yfinance as yf
+from sklearn.linear_model import Lasso
+from sklearn.linear_model import ElasticNet
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.svm import SVR
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import MinMaxScaler
 import sys
