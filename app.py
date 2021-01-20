@@ -31,7 +31,7 @@ def about():
 def etl():
     return render_template("etl.html")
 
-@app.route("/api")
+@app.route("/api",methods=['GET'])
 def api():
      #cursor.execute("select row_to_json(tickers)from  tickers") 
      #cursor.execute("select row_to_json(t)from (select * from tickers) t") 
@@ -40,7 +40,7 @@ def api():
      
      return json.dumps(results, indent=4, sort_keys=True, default=str)
      
-@app.route("/api/predictions")
+@app.route("/api/predictions",methods=['GET'])
 def predictions():
     cursor.execute("select * from predictions")
     results = cursor.fetchall()
