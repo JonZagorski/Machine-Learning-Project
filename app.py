@@ -42,7 +42,7 @@ def api():
      
 @app.route("/api/predictions")
 def predictions():
-    cursor.execute("select row_to_json(t)from (select * from predictions")
+    cursor.execute("select * from predictions")
     results = cursor.fetchall()
     return json.dumps(results, indent =4, sort_keys=True, default=str)
 
