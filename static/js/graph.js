@@ -25,7 +25,7 @@ var svg = d3.select("#area1")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
-var stocks = "https://final-project-stage.herokuapp.com/api"
+var stocks = `https://final-project-stage.herokuapp.com/api`
 // Get the data
 d3.json(stocks, function (error, data) {
   data.forEach(function (d) {
