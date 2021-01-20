@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.79.0">
-    <title>Dashboard Template · Bootstrap v5.0</title>
+    <title></title>
     
             <!-- jQuery library Needs to be above Bootstrap JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,7 +34,7 @@
             <!--Feather Icon JS -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     
-    <style>
+    <!-- <style>
       body {
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
       }
@@ -140,14 +140,14 @@
         background:#0066CC;
         color: white;
       }
-</style>
+</style> -->
 
   </head>
   <body>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <h1><a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="index.html"><i data-feather="trending-down"></i><strong>   Predicting Oil and Gas Stocks   </strong><i data-feather="trending-up"></i></h1></a>
+    <h1><a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#"><i data-feather="trending-down"></i><strong>   Predicting Oil and Gas Stocks   </strong><i data-feather="trending-up"></i></h1></a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -256,45 +256,53 @@
             <a href="#">Devon Energy Corp. (DVN)</a>
           </div>
         </div> -->
+        
         <select class="group-select" >
           <option value="WMB" >Williams Cos.
           <option value="PSX" selected="selected">Phillips 66
           <option value="FANG">Diamondback Energy
           <option value="COP">ConocoPhillips
+          <option value="XEC">Cimarex Energy Co.
+          <option value="PXD">Pioneer Natural Resources
+          <option value="EPD">Enterprise Products Partners LP
+          <option value="GLNG">Golar LNG Limited
+          <option value="NOG">Northern Oil & Gas
+          <option value="DVN">Devon Energy Corp.
         </select>
 
-
+        <!-- <div id="area1"></div> -->
+              
         <!-- <h1 class="h2">Dashboard</h1> -->
-        <!--<div class="btn-toolbar mb-2 mb-md-0">
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="trending-up"></span>
-            This week
-          </button>
-        </div>-->
-         <!--<div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Timeframe
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">1 week</a></li>
-            <li><a class="dropdown-item" href="#">3 months</a></li>
-            <li><a class="dropdown-item" href="#">1 year</a></li>
-          </ul>
-        </div>-->
-      </div>
+              <!--<div class="btn-toolbar mb-2 mb-md-0">
+                <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                  <span data-feather="trending-up"></span>
+                  This week
+                </button>
+              </div>-->
+              <!--<div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                  Timeframe
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="#">1 week</a></li>
+                  <li><a class="dropdown-item" href="#">3 months</a></li>
+                  <li><a class="dropdown-item" href="#">1 year</a></li>
+                </ul>
+              </div>-->
+              <!-- </div> -->
 
-      <!-- We append our graphs here. -->
-      <!--<canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>-->
-      <div class="graphs">
-        <div class="col-xs-12  col-md-9">
-          <div id="thegraph">
-            <canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>
-            <!-- We append our chart here. -->
+              <!-- We append our graphs here. -->
+              <!--<canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>-->
+        <div class="graphs">
+          <div class="col-xs-12  col-md-9">
+            <div id="thegraph">
+              <canvas class="my-4 w-100" id="myChart" width="900" height="380">Graphs</canvas>
+              <!-- We append our chart here. -->
+            </div>
           </div>
         </div>
-      </div>
     
-    <div id="area2">
+      <div id="area2"></div>
       
     </div>
       <h2>Section title</h2>
