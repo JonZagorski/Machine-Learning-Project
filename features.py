@@ -3,11 +3,21 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from sklearn.model_selection import train_test_split
 import plot
+<<<<<<< HEAD
 
 def loadDataset(symbol):
     '''Loads Dataset of the passed symbol from the datasets folder.'''
     df = pd.read_csv(''+symbol+'.csv', parse_dates=['date'])
     df = df.set_index('date') #sets index of the dataframe as the Date column instead of ordinal numbering.
+=======
+import finance
+
+def loadDataset(symbol):
+    '''Loads Dataset of the passed symbol from the datasets folder.'''
+    #df = finance.insertintotable(symbol)
+    df = pd.read_csv(''+symbol+'.csv', parse_dates=['Date'])
+    df = df.set_index('Date') #sets index of the dataframe as the Date column instead of ordinal numbering.
+>>>>>>> origin/main
     return df
 
 def splitDataset(X, y):
@@ -38,12 +48,21 @@ def addFeatures(df):
     df['macd'] = df['ema26'] - df['ema12']
     df['macd_signalline'] = (df.loc[:, 'macd']).ewm(ignore_na=False, min_periods=0, com=9, adjust=True).mean()
     df = df.drop(['ema26', 'ema12'], axis=1)
+<<<<<<< HEAD
     plot.feature_plot(df)
     df['returnout'] = df['adj_close'].shift(-1)
     df = df.dropna()
     df.loc[:, 'change'] = df.loc[:, 'returnout'] - df.loc[:, 'adj_close'] > 0
     X = df.loc[:, 'adj_close':'macd_signalline']
     y = df.loc[:, 'change']
+=======
+    #plot.feature_plot(df)
+    df['returnout'] = df['adj_close'].shift(-1)
+    df = df.dropna()
+    df.loc[:, 'change'] = df.loc[:, 'returnout'] - df.loc[:, 'adj_close'] > 0 
+    X = df.loc[:, 'adj_close':'macd_signalline']
+    y = df.loc[:, 'close']
+>>>>>>> origin/main
     return [X, y]
 
 def featureScaling(train, test):

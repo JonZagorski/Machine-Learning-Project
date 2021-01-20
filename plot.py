@@ -3,10 +3,13 @@ import matplotlib.pyplot as plt
 
 def dataset_plot(df, symbol):
     x = df.index
+<<<<<<< HEAD
     y = df.loc[:, 'Adj Close']
     plt.plot(x, y)
     plt.xlabel('Dates')
     plt.ylabel('Adj Close')
+=======
+>>>>>>> origin/main
     y = df.loc[:, 'adj_close']
     plt.plot(x, y)
     plt.xlabel('dates')
@@ -16,6 +19,7 @@ def dataset_plot(df, symbol):
 
 def feature_plot(df):
     x = df.index
+<<<<<<< HEAD
     y_mdav5 = df.loc[:, 'MDAV5']
     y_macd = df.loc[:, 'MACD']
     y_macd_sline = df.loc[:, 'MACD_SignalLine']
@@ -27,6 +31,8 @@ def feature_plot(df):
     plt.subplot(3,1,2)
     plt.plot(x, y_macd)
     plt.title('MACD')
+=======
+>>>>>>> origin/main
     y_mdav5 = df.loc[:, 'mdav5']
     y_macd = df.loc[:, 'macd']
     y_macd_sline = df.loc[:, 'macd_signalline']

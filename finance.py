@@ -1,15 +1,21 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from flask import Flask, render_template, request, flash, redirect, url_for
 =======
 >>>>>>> main
+=======
+>>>>>>> origin/main
 from numpy.lib.function_base import insert
 import pandas as pd
 import numpy as np
 from pandas import datetime
 <<<<<<< HEAD
+<<<<<<< HEAD
 import math, random
 =======
 >>>>>>> main
+=======
+>>>>>>> origin/main
 import math
 from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
@@ -17,6 +23,7 @@ from datetime import datetime
 import datetime as dt
 import yfinance as yf
 from sklearn.linear_model import LinearRegression
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 data = "WMB"
@@ -54,6 +61,8 @@ def get_historical(quote):
         df.to_csv(''+quote+'.csv',index=False)
 =======
 >>>>>>> main
+=======
+>>>>>>> origin/main
 from sklearn.preprocessing import MinMaxScaler
 import sys
 
@@ -117,10 +126,13 @@ def LIN_REG_ALGO(df):
         
         # Feature Scaling===Normalization
 <<<<<<< HEAD
+<<<<<<< HEAD
         from sklearn.preprocessing import StandardScaler
         sc = StandardScaler()
 =======
 >>>>>>> main
+=======
+>>>>>>> origin/main
         #from sklearn.preprocessing import MinMaxScaler
         sc = MinMaxScaler()
         X_train = sc.fit_transform(X_train)

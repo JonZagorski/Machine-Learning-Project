@@ -7,7 +7,10 @@ from sqlalchemy import create_engine
 from sqlalchemy.sql import select, func
 from datetime import date, datetime
 from psycopg2.extras import RealDictCursor
-app = Flask(__name__)
+TEMPLATE_DIR = os.path.abspath('templates')
+STATIC_DIR = os.path.abspath('static')
+IMAGE_FOLDER =os.path.join('static', 'images')
+app = Flask(__name__,template_folder=TEMPLATE_DIR, static_folder=STATIC_DIR)
 app.config.from_object(os.environ['APP_SETTINGS'])
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #app.config.from_object(os.environ['DATABASE_URL']
