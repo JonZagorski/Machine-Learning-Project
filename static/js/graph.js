@@ -136,7 +136,7 @@ var chart2 = d3.select("#area2")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
-var Stockdata = "output.json";
+var Stockdata = `https://final-project-stage.herokuapp.com/api`;
 // Get the data
 d3.json(Stockdata, function (error, data) {
   console.log(data)
