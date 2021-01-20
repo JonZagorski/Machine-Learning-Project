@@ -6,11 +6,11 @@ import finance
 import sys
 import pandas as pd
 
-symbols = ['WMB','PSX', 'FANG', 'COP', 'XEC', 'PXD', 'EPD', 'GLNG', 'NOG', 'DVN']
+#symbols = ['WMB','PSX', 'FANG', 'COP', 'XEC', 'PXD', 'EPD', 'GLNG', 'NOG', 'DVN']
 
-#symbols = sys.argv[1:] #loads symbols from the command line.
+symbols = sys.argv[1:] #loads symbols from the command line.
 for symbol in symbols: #runs the models on every symbol.
-    score = models2.get_historical(symbol)
+    models2.get_historical(symbols)
     #print(score)
     #linreg = finance.insertintotable(symbol)
     #df = features.loadDataset(symbol)
