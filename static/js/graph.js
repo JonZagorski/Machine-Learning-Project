@@ -24,7 +24,7 @@ var svg = d3.select("#area1")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
-var stocks ="outputj.json";
+var stocks =`https://final-project-stage.herokuapp.com/api`;
 // Get the data
 d3.json(stocks, function (error, data) {
   data.forEach(function (d) {
@@ -266,7 +266,7 @@ var chart2 = d3.select("#area2")
   .attr("transform",
     "translate(" + margin.left + "," + margin.top + ")");
 
-var Stockdata = "prediction.json";
+var Stockdata = `https://final-project-stage.herokuapp.com/api/predictions`;
 // Get the data
 d3.json(Stockdata, function (error, data) {
   data = data.sort(sortByDateAscending);
