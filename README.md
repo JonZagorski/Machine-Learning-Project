@@ -1,7 +1,5 @@
 # Predicting Oil and Gas Stocks - Final Project
-Link TO Heroku: https://final-project-stage.herokuapp.com/
-
-Github: https://github.com/JonZagorski/final-project
+LINK TO HEROKU: https://final-project-stage.herokuapp.com/
 
 
 ## Background
@@ -111,3 +109,5 @@ Regularly touched base via Slack to ensure project is on track.
 * [Jon Zagorski](https://github.com/JonZagorski)
 * [Roshini Jayantha](https://github.com/RoshiniGau)
 * [Kimberly Gore](https://github.com/KGore12)
+
+GITHUB FOR FINAL PROJECT: https://github.com/JonZagorski/final-project
