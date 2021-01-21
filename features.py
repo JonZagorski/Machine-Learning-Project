@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import plot
 <<<<<<< HEAD
 
@@ -21,6 +22,10 @@ def loadDataset(symbol):
 
 def loadDataset(symbol):
 >>>>>>> origin/main
+=======
+
+def loadDataset(symbol):
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
     df = pd.read_csv(''+symbol+'.csv', parse_dates=['Date'])
     df = df.set_index('Date') #sets index of the dataframe as the Date column instead of ordinal numbering.
 >>>>>>> origin/main

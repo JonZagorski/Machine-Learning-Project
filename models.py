@@ -20,7 +20,10 @@ from sklearn.tree import DecisionTreeRegressor
 
 def train(df):
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
 
     X, y = features.addFeatures(df)
 >>>>>>> origin/main
@@ -30,6 +33,7 @@ def train(df):
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
     
     X_train, X_test = features.featureScaling(X_train, X_test)
+<<<<<<< HEAD
 <<<<<<< HEAD
     
     model_slinear = svm.SVC(kernel='linear')
@@ -87,6 +91,8 @@ def train(df):
     X_train, X_test = features.featureScaling(X_train, X_test)
 =======
 >>>>>>> origin/main
+=======
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
     
     model_cart = DecisionTreeRegressor()
     model_cart.fit(X_train, y_train)

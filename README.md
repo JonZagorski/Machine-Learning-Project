@@ -44,9 +44,13 @@ Trained and tested KNN (k-nearest neighbors), SVR (support vector regression), L
 * Database: PostGres hosted on AWS (called by Flask)
 * Host Application:  Heroku
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 * Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
 >>>>>>> origin/main
+=======
+* Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
 
 
 #### [Images](Images)
@@ -68,9 +72,13 @@ Index, About, Process
 Jupyter Notebook files of cleaned data used for testing and training machine learning algorithms.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/main
+=======
+
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
 ![](https://github.com/JonZagorski/final-project/blob/main/screenshots/indexhtml.png)
 
 Distribution of tasks

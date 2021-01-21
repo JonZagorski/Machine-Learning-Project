@@ -27,6 +27,7 @@ var svg = d3.select("#area1")
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 var stocks = "https://final-project-stage.herokuapp.com/api"
 =======
 var stocks ="outputj.json";
@@ -34,6 +35,9 @@ var stocks ="outputj.json";
 =======
 var stocks ="outputj.json";
 >>>>>>> origin/main
+=======
+var stocks ="outputj.json";
+>>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
 // Get the data
 d3.json(stocks, function (error, data) {
   data.forEach(function (d) {
