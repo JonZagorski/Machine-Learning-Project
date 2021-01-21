@@ -43,6 +43,7 @@ Trained and tested KNN (k-nearest neighbors), SVR (support vector regression), L
 * Bootstrap for the HTML, CSS, and JavaScript Framework for web application.
 * Database: PostGres hosted on AWS (called by Flask)
 * Host Application:  Heroku
+* Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
 
 
 #### [Images](Images)
@@ -62,6 +63,7 @@ Index, About, Process
 
 #### [Test](test)
 Jupyter Notebook files of cleaned data used for testing and training machine learning algorithms.
+
 
 ![](https://github.com/JonZagorski/final-project/blob/main/screenshots/indexhtml.png)
 
