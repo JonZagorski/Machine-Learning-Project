@@ -45,12 +45,16 @@ Trained and tested KNN (k-nearest neighbors), SVR (support vector regression), L
 * Host Application:  Heroku
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 * Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
 >>>>>>> origin/main
 =======
 * Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+* Google Slides Presentation: https://docs.google.com/presentation/d/1pBWh26kjqHpMV2-2cadd5DjturxX8UY4JPbyi2F8PWY/edit?usp=sharing
+>>>>>>> origin/main
 
 
 #### [Images](Images)
@@ -73,12 +77,16 @@ Jupyter Notebook files of cleaned data used for testing and training machine lea
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> origin/main
 =======
 
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+
+>>>>>>> origin/main
 ![](https://github.com/JonZagorski/final-project/blob/main/screenshots/indexhtml.png)
 
 Distribution of tasks

@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import models
 <<<<<<< HEAD
 import features
@@ -31,6 +32,8 @@ import sys
 >>>>>>> origin/main
 =======
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+>>>>>>> origin/main
 # import models
 # import models2
 # import features
@@ -40,11 +43,14 @@ import sys
 import model_picking
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> origin/main
 =======
 >>>>>>> origin/main
 =======
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+>>>>>>> origin/main
 import pandas as pd
 import io
 
@@ -66,6 +72,7 @@ model_picking.get_historical(symbol)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     final = output.output(df, symbol)
     #plot.dataset_plot(df, symbol)
     connection = output.pg_connection(df)
@@ -76,6 +83,8 @@ model_picking.get_historical(symbol)
 >>>>>>> origin/main
 =======
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+>>>>>>> origin/main
 #     #train the dataframe using train_test split and run the dataframe through
 #     #the Decision Tree Regressor
 #     model_prediction =  models.train(df)
@@ -100,6 +109,7 @@ model_picking.get_historical(symbol)
 #     #connect dataframe to PostgreSQL
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #     connection = output.pg_connection(final_df)
 >>>>>>> origin/main
 =======
@@ -108,3 +118,6 @@ model_picking.get_historical(symbol)
 =======
 #     connection = output.pg_connection(final_df)
 >>>>>>> b1700c11035c0289beff651000a9e23d6ddaa8bc
+=======
+#     connection = output.pg_connection(final_df)
+>>>>>>> origin/main
