@@ -17,7 +17,7 @@ var priceline = d3.line()
   .y(function (d) { return y(d.price); });
 
 // Adds the svg canvas
-var svg = d3.select(".graphs")
+var svg = d3.select("#area1")
   .append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
