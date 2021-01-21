@@ -1,5 +1,4 @@
-# Project-2
-# Predicting Oil and Gas Stocks
+# Predicting Oil and Gas Stocks - Final Project
 Link TO Heroku: https://final-project-stage.herokuapp.com/
 
 Github: https://github.com/JonZagorski/final-project
