@@ -10,7 +10,6 @@ body {
   }
 
   
-
   h1 {
     font-size: 60px;
     padding-top: 10px;
@@ -29,7 +28,7 @@ body {
     text-align: left;
   }
   
-  *  {
+  /* *  {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding-top: 10px;
     padding-right: 30px;
@@ -38,7 +37,7 @@ body {
     display: inline-block;
     /* align-items: center;
     justify-content: center */
-  }
+  } */
 /* s */
   
   .feather {
@@ -117,7 +116,7 @@ body {
   /***********************************
    * Navbar
    ***********************************/
-  
+ 
    .nav-item {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 30px;
@@ -127,6 +126,13 @@ body {
     
   }
   
+  /* .navbar-nav {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 50px;
+    font-weight: bold
+
+  } */
+
   .navbar-brand {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -138,7 +144,7 @@ body {
 
     top: .25rem;
     right: 1rem;
-    font-size: 4.0rem;
+    font-size: 1.25rem;
   }
   
   .navbar .form-control {
@@ -155,7 +161,7 @@ body {
   
   .form-control-dark:focus {
     border-color: transparent;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    box-shadow: 0 0 0 3px rgba(179, 174, 174, 0.25);
   }
   
    

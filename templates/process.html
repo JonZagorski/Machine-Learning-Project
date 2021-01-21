@@ -1,17 +1,131 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Flask Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title></title>
+
+            <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+            <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+            <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    
+            <!-- Bootstrap core CSS; Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style-about.css" type="text/css">
+    <!-- <link rel="stylesheet" href="../static/css/style.css" type="text/css"> -->
+
+            <!--Feather Icon JS -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+      
+    <!--Flask Path <link rel="stylesheet" href="/static/css/style.css"> -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"">-->
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css"> -->
+    <!-- <style>
+      #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-image: url(../static/images/oilshimmer-pexels-suzy-hazelwood-1629236.jpg);
+      background-size: cover;
+      z-index: -1;
+      }</style> -->
   </head>
+  <div id="bg">
+    <img src="../static/images/cityabove2-pexels-alex-qian-2304917.jpg" alt="oilshimmer pic">
+  </div>
+  
+  
   <body>
-    {% extends "template.html" %}
-    {% block content %}
-    
-    <h1> My First Try Using Flask </h1>
-    <p> Flask is Fun </p>
-    
-    {% endblock %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a class="nav-link active" aria-current="page" href="/"><strong>Dashboard</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about"><strong>Our Team</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/process"><strong>Machine Learning Process</strong></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- One -->
+    <div class="container-fluid"></div>
+      <section id="One" class="wrapper style3">
+        <div class="inner">
+          <header class="align-center">
+            <p style="font-size:75px";><strong>Learn About Our Process</strong></p>
+            <!-- <h2>Neural Network</h2> -->
+          </header>
+        </div>
+      </section>
+    </div> <!-- section one -->
+    <!-- Two -->
+    <div class="container-fluid">
+      <section id="two" class="wrapper style2">
+        <div class="inner">
+          <div class="box">
+            <div class="content">
+              <header class="align-center">
+                <!-- <p>Background on the model</p> -->
+                <h2>Purpose</h2>
+              </header>
+              <p>The goal of this algorithm is to accurately determine whether one can predict stock trends to help determine the best time one should buy or sell. The modeling our team has created is by no means close to the amount of data that large companies spend large sums of money each year to help structure their predictions models.  However, we hope that our small sampling demonstrated here today will provide the best case scenario as a beginner. Here we present you with 10 Oil and Gas stocks. These were chosen as they fall into the same category. Were we to have chosen a random sampling across various categories, our predictions models would not have yielded results as accurate. </p>
+              <div class="img-container"><img src="../static/images/oilplantskyline-pexels-pixabay-301484.jpg" class="rounded mx-auto d-block" width="2000" height="800" alt="" /></div><!-- Photo by Pixabay on Pexels https://www.pexels.com/photo/colors-dawn-dusk-evening-301484/-->
+              
+            </div>
+            <div class="content">
+              <header class="align-center">
+                <!-- <p>Creating conformity within the text</p> -->
+                <h2>Data Cleaning</h2>
+              </header>
+              <p>
+                We sourced our data from Yahoo Finance through a series of API calls. Originally, we were going to use a CSV from Quandl but abandoned this idea for Yahoo Finance as this allowed our team to pull in data that was as current as possible without incurring fees. Cleaning the data itself went about with minor hiccups.  
+
+                The challenges of converting everyting needed to Json files and figuring out the proper sytax took time to figure out but eventually we were able get the data to pull from our database successly into Heroku.                
+              </p>
+              <div class="img-container"><img src="../static/images/oilplant-pexels-loïc-manegarium-3855962.jpg" class="rounded mx-auto d-block" width="2000" height="800" alt="" /></div><!-- Photo by Pixabay on Pexels https://www.pexels.com/photo/colors-dawn-dusk-evening-301484/-->
+            </div>
+            <div class="content">
+              <header class="align-center">                
+                <h2>Machine Learning -Sending data into the Pipline</h2>
+              </header>
+              <p>Even with clean data it takes time and patience to put various models through training and testing.  Several models were tested in order to determine which one would yield the most accurate results using all of the features the team had chosen.  Our project trained and tested KNN (k-nearest neighbors), SVR (support vector regression), Linear Regression, and Decision Tree Regressor.  The Decision Tree Regressor model yielded the highest percentage of accuracy (about 97%) and is the model used for the results shown here. Features used for the modeling were:</p> 
+                <li>High-Low: It is the difference between High and Low prices of a stock for a particular day.</li> 
+                <li> PCT_Change: Calculates the percent change shift on 5 days</li> 
+                <li>MDAV5: The Rolling Mean Window calculation for 5 days</li> 
+                <li>EMA5: Exponential Moving Average for 5 days</lip> 
+                <li> MACD/MACD_SignalLine: Moving Average Convergence/Divergence</li>  
+                <li>Oscillator. Difference between EMA26 - EMA12</li> 
+                <li>Return Out: Shifts the Adj. Close for stock prices by 1 day</li> 
+                <div class="img-container"><img src="../static/images/oilrig-pexels-janrune-smenes-reite-3216911.jpg" class="rounded mx-auto d-block" width="2000" height="800" alt="" /></div><!-- Photo by Pixabay on Pexels https://www.pexels.com/photo/colors-dawn-dusk-evening-301484/-->
+            </div>             
+          </div>
+        </div>
+      </section>
+    </div><!-- section2 -->
+
   </body>
 
 </html>

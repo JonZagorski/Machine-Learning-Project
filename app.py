@@ -30,9 +30,9 @@ def home():
 def about():
     return render_template("about.html")
 
-@app.route("/etl")
-def etl():
-    return render_template("etl.html")
+@app.route("/process")
+def process():
+    return render_template("process.html")
 
 @app.route("/api",methods=['GET'])
 def api():
