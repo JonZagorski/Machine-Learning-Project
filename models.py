@@ -19,16 +19,7 @@ from sklearn.tree import DecisionTreeRegressor
 >>>>>>> origin/main
 
 def train(df):
-    '''This function trains the data on 4 different SVC model kernels:
-    1. Linear Kernel
-    2. Polynomial Kernel
-    3. Radial Basis Function Kernel
-    4. Sigmoid Kernel
-    The RFC model is also implemented. 
-    
-    The hyperparameters are set default in each case.
-    The score of the model on the Dev/Test set is returned to the main script.
-    '''
+
     X, y = features.addFeatures(df)
 <<<<<<< HEAD
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
@@ -85,9 +76,15 @@ def train(df):
 =======
 
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
-    X_train, X_test = features.featureScaling(X_train, X_test)
-
     
+    X_train, X_test = features.featureScaling(X_train, X_test)
+    
+    model_cart = DecisionTreeRegressor()
+    model_cart.fit(X_train, y_train)
+    cart_predictions = model_cart.predict(X_test)
+
+    df=pd.DataFrame({'Actual':y_test, 'Predicted':cart_predictions})
+
     #model_slinear = svm.SVC(kernel='linear')
 
     # Create the GridSearch estimator along with a parameter object containing the values to adjust
@@ -111,12 +108,6 @@ def train(df):
     # model_spoly = svm.SVC(kernel='poly')
     # model_spoly.fit(X_train, y_train)
     # score_spoly = model_spoly.score(X_test, y_test)
-    
-    model_cart = DecisionTreeRegressor()
-    model_cart.fit(X_train, y_train)
-    cart_predictions = model_cart.predict(X_test)
-
-    df=pd.DataFrame({'Actual':y_test, 'Predicted':cart_predictions})
     
     #print(cart_predictions)
 
