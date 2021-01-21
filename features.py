@@ -2,20 +2,14 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from sklearn.model_selection import train_test_split
-import plot
-import finance
 
 def loadDataset(symbol):
-    '''Loads Dataset of the passed symbol from the datasets folder.'''
-    #df = finance.insertintotable(symbol)
     df = pd.read_csv(''+symbol+'.csv', parse_dates=['Date'])
     df = df.set_index('Date') #sets index of the dataframe as the Date column instead of ordinal numbering.
     return df
 
 def splitDataset(X, y):
     '''Splits the data into Training and Test/Dev set. 80% - Train.
-    Though the function train_test_split() could have been called as and when required in any script,
-    It has been included in this file only to maintain the format and utility of scripts.
     '''
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
     return X_train, X_test, y_train, y_test
