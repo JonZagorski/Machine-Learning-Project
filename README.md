@@ -8,7 +8,7 @@ Github: https://github.com/JonZagorski/final-project
 The goal of this algorithm is to accurately predict stock trends to help determine the best time one should buy or sell. The data our team used to create the models does not come close to the amount of data that large companies spend large sums of money each year for millions of lines of data to help structure their predictions models.  However, we hope that the small sampling demonstrated here today will provide one with a sense of what goes into making stock predictions and all the related intricacies. Here we present you with 10 Oil and Gas stocks. We wanted to focus on stocks in one category and understand if these may not suit your interests. Were we to have chosen a random sampling across various categories, our predictions models would not have yielded results as accurate.
 
 
-![]https://github.com/JonZagorski/final-project/blob/main/screenshots/Graph1.png)![]https://github.com/JonZagorski/final-project/blob/main/screenshots/Graph2.png)
+![](https://github.com/JonZagorski/final-project/blob/main/screenshots/Graph1.png)![]https://github.com/JonZagorski/final-project/blob/main/screenshots/Graph2.png)
 ## Data Cleanup
 The goal of the back-end is to find the data necessary to tell a story. 
 
