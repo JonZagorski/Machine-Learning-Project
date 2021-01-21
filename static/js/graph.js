@@ -34,7 +34,9 @@ d3.json(stocks).then(function(data)  {
   });
   // Define the axes
   var xAxis = d3.axisBottom(x)
-    .ticks(5);
+    .ticks(5)
+    .tickFormat(d3.timeFormat("%Y-%m-%d"));
+
 
   var yAxis = d3.axisLeft(y)
     .ticks(5);
@@ -112,7 +114,9 @@ var y = d3.scaleLinear().range([height, 0]);
 
 // Define the axes
 var xAxis = d3.axisBottom().scale(x)
-  .ticks(5);
+  .ticks(5)
+  .tickFormat(d3.timeFormat("%Y-%m-%d"));
+
 
 var yAxis = d3.axisLeft().scale(y)
   .ticks(5);
