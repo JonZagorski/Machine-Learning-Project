@@ -19,11 +19,18 @@ from sklearn.tree import DecisionTreeRegressor
 >>>>>>> origin/main
 
 def train(df):
+<<<<<<< HEAD
+=======
+
+    X, y = features.addFeatures(df)
+>>>>>>> origin/main
 
     X, y = features.addFeatures(df)
 <<<<<<< HEAD
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
+    
     X_train, X_test = features.featureScaling(X_train, X_test)
+<<<<<<< HEAD
     
     model_slinear = svm.SVC(kernel='linear')
     # Create the GridSearch estimator along with a parameter object containing the values to adjust
@@ -78,6 +85,8 @@ def train(df):
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
     
     X_train, X_test = features.featureScaling(X_train, X_test)
+=======
+>>>>>>> origin/main
     
     model_cart = DecisionTreeRegressor()
     model_cart.fit(X_train, y_train)

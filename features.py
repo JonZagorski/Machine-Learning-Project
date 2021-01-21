@@ -3,6 +3,7 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from sklearn.model_selection import train_test_split
 <<<<<<< HEAD
+<<<<<<< HEAD
 import plot
 <<<<<<< HEAD
 
@@ -16,6 +17,10 @@ import finance
 >>>>>>> origin/main
 
 def loadDataset(symbol):
+=======
+
+def loadDataset(symbol):
+>>>>>>> origin/main
     df = pd.read_csv(''+symbol+'.csv', parse_dates=['Date'])
     df = df.set_index('Date') #sets index of the dataframe as the Date column instead of ordinal numbering.
 >>>>>>> origin/main

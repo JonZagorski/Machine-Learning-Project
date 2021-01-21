@@ -26,7 +26,11 @@ var svg = d3.select("#area1")
     "translate(" + margin.left + "," + margin.top + ")");
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 var stocks = "https://final-project-stage.herokuapp.com/api"
+=======
+var stocks ="outputj.json";
+>>>>>>> origin/main
 =======
 var stocks ="outputj.json";
 >>>>>>> origin/main

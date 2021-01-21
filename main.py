@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import models
 <<<<<<< HEAD
 import features
@@ -25,6 +26,8 @@ import finance
 import plot 
 import sys
 =======
+=======
+>>>>>>> origin/main
 # import models
 # import models2
 # import features
@@ -32,6 +35,9 @@ import sys
 # import finance
 # import plot 
 import model_picking
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 >>>>>>> origin/main
 import pandas as pd
 import io
@@ -52,12 +58,15 @@ model_picking.get_historical(symbol)
 #     df = features.loadDataset(symbol)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     final = output.output(df, symbol)
     #plot.dataset_plot(df, symbol)
     connection = output.pg_connection(df)
     #print(f"Scores of models on the dataset {symbol} (Linear, Poly, RBF, Sigmoid, RFC, AdaBoost, VotingClassifier): {[score * 100 for score in scores_models]}")
 >>>>>>> origin/main
 =======
+=======
+>>>>>>> origin/main
 #     #train the dataframe using train_test split and run the dataframe through
 #     #the Decision Tree Regressor
 #     model_prediction =  models.train(df)
@@ -80,5 +89,9 @@ model_picking.get_historical(symbol)
 #     #plot.dataset_plot(df, symbol)
 
 #     #connect dataframe to PostgreSQL
+<<<<<<< HEAD
+#     connection = output.pg_connection(final_df)
+>>>>>>> origin/main
+=======
 #     connection = output.pg_connection(final_df)
 >>>>>>> origin/main
