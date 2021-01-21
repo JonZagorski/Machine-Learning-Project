@@ -91,7 +91,7 @@
                 <!-- <p>Background on the model</p> -->
                 <h2>Purpose</h2>
               </header>
-              <p>The goal of this algorithm is to accurately determine whether one can predict stock trends to help determine the best time one should buy or sell. The modeling our team has created is by no means close to the amount of data that large companies spend large sums of money each year to help structure their predictions models.  However, we hope that our small sampling demonstrated here today will provide the best case scenario as a beginner. Here we present you with 10 Oil and Gas stocks. These were chosen as they fall into the same category. Were we to have chosen a random sampling across various categories, our predictions models would not have yielded results as accurate. </p>
+              <p>The goal of this algorithm is to accurately predict stock trends to help determine the best time one should buy or sell. The data our team used to create the models does not come close to the amount of data that large companies spend large sums of money each year for millions of lines of data to help structure their predictions models.  However, we hope that the small sampling demonstrated here today will provide one with a sense of what goes into making stock predictions and all the related intricacies. Here we present you with 10 Oil and Gas stocks. We wanted to focus on stocks in one category and understand if these may not suit your interests. Were we to have chosen a random sampling across various categories, our predictions models would not have yielded results as accurate. </p>
               <div class="img-container"><img src="../static/images/oilplantskyline-pexels-pixabay-301484.jpg" class="rounded mx-auto d-block" width="1200" height="500" alt="" /></div><!-- Photo by Pixabay on Pexels https://www.pexels.com/photo/colors-dawn-dusk-evening-301484/-->
               
             </div>
@@ -109,7 +109,7 @@
             </div>
             <div class="content">
               <header class="align-center">                
-                <h2>Machine Learning -Sending data into the Pipline</h2>
+                <h2>Machine Learning Algorithms</h2>
               </header>
               <p>Even with clean data it takes time and patience to put various models through training and testing.  Several models were tested in order to determine which one would yield the most accurate results using all of the features the team had chosen.  Our project trained and tested KNN (k-nearest neighbors), SVR (support vector regression), Linear Regression, and Decision Tree Regressor.  The Decision Tree Regressor model yielded the highest percentage of accuracy (about 97%) and is the model used for the results shown here. Features used for the modeling were: 
                 <li>High-Low: It is the difference between High and Low prices of a stock for a particular day.</li> 
@@ -121,6 +121,11 @@
                 <li>Return Out: Shifts the Adj. Close for stock prices by 1 day</li> 
               </p>
                 <div class="img-container"><img src="../static/images/oilrig-pexels-janrune-smenes-reite-3216911.jpg" class="rounded mx-auto d-block" width="1200" height="500" alt="" /></div><!-- Photo by Pixabay on Pexels https://www.pexels.com/photo/colors-dawn-dusk-evening-301484/-->
+            <div class="content">
+              <header class="align-center">                
+                <h2>Sending data into the Pipline-Deploying to Heroku</h2>
+              </header>
+              <p>Challenges were also encountered in getting everything to successfully deploy to Heroku but we were successful. Flask is tricky and getting everything setup "just so" takes time and patience. Not having a unique identifier for the data meant there were no primary keys. Figuring out a workaround took additional patience. Additionally, Psycopg2 query gives tuples which caused issues. Psycopg2 also has a module called "realdictcursor" that gives dictionaries instead of tuples. Fortunately, we were able to find solutions and saw a successful deployment to Heroku.  This was quite the learning experience and we learned so much.</p>
             </div>             
           </div>
         </div>
