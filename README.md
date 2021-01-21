@@ -1,6 +1,6 @@
 # Project-2
 # Predicting Oil and Gas Stocks
-LINK TO Heroku: https://final-project-stage.herokuapp.com/
+Link TO Heroku: https://final-project-stage.herokuapp.com/
 
 Github: https://github.com/JonZagorski/final-project
 
@@ -9,10 +9,11 @@ Github: https://github.com/JonZagorski/final-project
 The goal of this algorithm is to accurately predict stock trends to help determine the best time one should buy or sell. The data our team used to create the models does not come close to the amount of data that large companies spend large sums of money each year for millions of lines of data to help structure their predictions models.  However, we hope that the small sampling demonstrated here today will provide one with a sense of what goes into making stock predictions and all the related intricacies. Here we present you with 10 Oil and Gas stocks. We wanted to focus on stocks in one category and understand if these may not suit your interests. Were we to have chosen a random sampling across various categories, our predictions models would not have yielded results as accurate.
 
 
-![](https://github.com/KGore12/Group_Project_2/blob/main/Images/View2.PNG)
 
 ## Data Cleanup
 The goal of the back-end is to find the data necessary to tell a story. 
+
+![](https://github.com/JonZagorski/final-project/blob/main/screenshots/main.PNG)
 
 We sourced our data from Yahoo Finance through a series of API calls. Originally, we were going to use a CSV from Quandl but abandoned this idea for Yahoo Finance as this allowed our team to pull in data that was as current as possible without incurring fees. Cleaning the data itself went about with minor hiccups.  
 
