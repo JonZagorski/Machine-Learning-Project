@@ -1,0 +1,5 @@
+update the index.html dropdown for the graphs 
+add tooltip to the js graphs 
+get table setup on index.html 
+clean up github repo 
+convert flask app to package. ie. routes.py and use config.py 
