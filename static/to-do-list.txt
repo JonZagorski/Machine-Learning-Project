@@ -3,3 +3,6 @@ add tooltip to the js graphs
 get table setup on index.html 
 clean up github repo 
 convert flask app to package. ie. routes.py and use config.py 
+finish config.py
+try and automate the etl process
+increase the user interactivity on the app 
