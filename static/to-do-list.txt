@@ -1,8 +1,16 @@
-update the index.html dropdown for the graphs 
-add tooltip to the js graphs 
-get table setup on index.html 
-clean up github repo 
-convert flask app to package. ie. routes.py and use config.py 
-finish config.py
-try and automate the etl process
-increase the user interactivity on the app 
+clean up github repo 0
+update the index.html dropdown for the graphs 1
+try and automate the etl process 2
+add tooltip and zoom to the js graphs 3
+get table setup on index.html 4
+finish config.py 6
+convert flask app to package. ie. routes.py and use config.py 7
+Maybe split up database into tables but this will probably cost money on AWS 8
+convert api to sqlalchemy and use automap base to make api searchable 
+Work on the ML algorithims to make the answer not in the test data and increase there accuracy
+pickle the ML algo and load into flask 
+Try and allow people to upload their own gas/energy stock and get a prediction 
+Work on the bootstrap so the webpage scales better based on screen size 
+Get table setup on index.html with data from the DB 
+Clean up the github repo after all this 
+Go to demo day 
