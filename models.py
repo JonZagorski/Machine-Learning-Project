@@ -1,7 +1,6 @@
 from sklearn import svm
 import pandas as pd
 import features
-import finance
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestClassifier as rfc
 from sklearn.ensemble import AdaBoostClassifier as abc
@@ -16,7 +15,7 @@ def train(df):
     X, y = features.addFeatures(df)
 
     X_train, X_test, y_train, y_test = features.splitDataset(X, y)
-    
+
     X_train, X_test = features.featureScaling(X_train, X_test)
     
     model_cart = DecisionTreeRegressor()
