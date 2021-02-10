@@ -1,0 +1,45 @@
+.view {
+    fill: white;
+    
+  }
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+  body { font: 12px Arial;}
+ 
+  path { 
+      stroke: steelblue;
+      stroke-width: 2;
+      fill: none;
+      mix-blend-mode: multiply;
+  } 
+    
+  .axis path,
+  .axis line {
+      fill: none;
+      stroke: grey;
+      stroke-width: 1;
+      
+  }
+   
+  .legend {
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+  }
+
+  .overlay {
+    fill: none;
+    pointer-events: all;
+  }
+  .article {
+    float: left;
+    width: 50%;
+  }
+  
+  .article:nth-child(odd) {
+    clear: left;
+  }
+  
