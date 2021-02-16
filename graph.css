@@ -42,4 +42,33 @@
   .article:nth-child(odd) {
     clear: left;
   }
+  tr{
+    background-color: #85929E;
+    vertical-align : middle;
+    text-align:center;
+  }
+  td{
+    background-color: #DEDADA;
+    font-size: 13px;
+   
+  }
+  th{
+    background-color: #85929E;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  table{
+    color: #504F4F;
+    width: 100%;
+    overflow-x:auto; 
+  }
+
+  /* style for  tooltip customization */
+  div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    padding: 10px;	
+    font: 12px sans-serif;		
+    border-radius: 8px;			
+    pointer-events: none;	
   
