@@ -17,7 +17,7 @@ var priceline = d3.line()
 
 // Define the axes
 var xAxis = d3.axisBottom(x).scale(x)
-  .tickFormat(d3.timeFormat("%Y-%m-%d"));
+  .tickFormat(d3.timeFormat("%m/%d/%Y"));
 
 var yAxis = d3.axisLeft(y).scale(y)
   .ticks(5);
@@ -125,7 +125,7 @@ d3.json(stocks, function (error, data) {
     //svg.selectAll(".line")
     //.attr("transform", d3.event.transform);
 
-    x.range([margin.left, width - margin.right]
+    x.range([0, width]
       .map(
         d => d3.event.transform.applyX(d)
       )
@@ -253,13 +253,13 @@ d3.json(stocks, function (error, data) {
 //Chart 2
 
 // Set the ranges
-var x = d3.scaleTime().range([0, width]);
+var x_2 = d3.scaleTime().range([0, width]);
 var y = d3.scaleLinear().range([height, 0]);
 
 // Define the axes
-var xAxis = d3.axisBottom(x).scale(x)
+var xAxis_2 = d3.axisBottom(x_2).scale(x_2)
   .ticks(5)
-  .tickFormat(d3.timeFormat("%Y-%m-%d"));
+  .tickFormat(d3.timeFormat("%m/%d/%Y"));
   
 
 var yAxis = d3.axisLeft(y).scale(y)
@@ -267,12 +267,14 @@ var yAxis = d3.axisLeft(y).scale(y)
 
 // Define the 1st line
 var valueline = d3.line()
-  .x(function (d) { return x(d.rt); })
+  .x(function (d) {
+     return x_2(d.rt); 
+  })
   .y(function (d) { return y(d.p); });
 
 // define the 2nd line
 var valueline2 = d3.line()
-  .x(function(d) { return x(d.rt); })
+  .x(function(d) { return x_2(d.rt); })
   .y(function(d) { return y(d.a); });
 
 // Adds the svg canvas
@@ -299,7 +301,7 @@ function drawChart()
 
 // Get the data
   d3.json(Stockdata, function (error, data) {
-    //data = data.sort(sortByDateAscending);
+    data = data.sort(sortByDateAscending);
     console.log(data);
     data.forEach(function (d) {
       d.rt = Date.parse(d.Date);
@@ -307,7 +309,7 @@ function drawChart()
       d.a = +d.Actual;
     });
      // Scale the range of the data
-  x.domain(d3.extent(data, function (d) { return d.rt; }));
+  x_2.domain(d3.extent(data, function (d) { return d.rt; }));
   
   y.domain([0, d3.max(data, function(d) {
     return Math.max(d.p, d.a); })]);
@@ -316,7 +318,7 @@ function drawChart()
   var axisX = chart2.append("g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + height + ")")
-    .call(xAxis);
+    .call(xAxis_2);
 
   // Add the Y Axis
   var axisY = chart2.append("g")
@@ -426,35 +428,20 @@ function drawChart()
     .on("zoom", zoomHandler);
 
   function zoomHandler() {
-    //gX.call(xAxis.scale(d3.event.transform.rescaleX(x)));
-    //gY.call(yAxis.scale(d3.event.transform.rescaleY(y)));
-    //svg.select(".x.axis").call(xAxis);
-    //svg.select(".y.axis").call(yAxis);
-    //svg.selectAll(".line")
-    //.attr("transform", d3.event.transform);
+    
+    x_2.range([0, width].map(d => d3.event.transform.applyX(d)));
+    //y.range([height - margin.bottom,margin.top].map(d => d3.event.transform.applyY(d)));
 
-    x.range([margin.left, width - margin.right]
-      .map(
-        d => d3.event.transform.applyX(d)
-      )
-    );
-
-
-    chart2.selectAll("path.line")
+    chart2.selectAll("path#id")
     .attr('d', valueline);
 
-    // chart2.selectAll("path.line")
-    // .attr('d', valueline2);
+    chart2.selectAll("path#id2")
+    .attr('d', valueline2);
 
     chart2.select(".x-axis")
-    .call(d3.axisBottom(x)
+    .call(d3.axisBottom(x_2)
       .tickSizeOuter(0));
     
-    //   svg.select('#' + this.id ).attr('d', priceline);
-    // })
-
-    // return false;
-  //g.attr("transform", d3.event.transform);
   }
   chart2.call(zoomListener);
 
@@ -462,13 +449,14 @@ function drawChart()
 
   var bisect = d3.bisector(d => d.rt).left,
     format = d3.format("+.0%"),
-    dateFormat = d3.timeFormat("%Y-%m-%d")
+    dateFormat = d3.timeFormat("%m/%d/%Y")
   
   var focuschart = chart2.append("g")
     .attr("class", "focuschart")
     .style("display", "none");
   
   focuschart.append("line")
+    .datum(data)
     .attr("stroke", "black")
     .attr("stroke-width", 1)
     .attr("y1", -height);
@@ -489,12 +477,12 @@ function drawChart()
     .attr("class", "overlay")
     .attr("width", width)
     .attr("height", height)
-    .on("mouseover", () => focuschart.style("display", null))
+    .on("mouseenter", () => focuschart.style("display", "inline"))
     .on("mouseout", () => focuschart.style("display", "none"))
     .on("mousemove", mousemove);
   
   function mousemove() {
-    var x0 = x.invert(d3.mouse(this)[0]);
+    var x0 = x_2.invert(d3.mouse(this)[0]);
     var i = bisect(data, x0, 1),
       d0 = data[i - 1],
       d1 = data[i],
@@ -508,15 +496,15 @@ function drawChart()
       
    focuschart.select("line")
     .attr("transform", 
-        "translate(" + x(d.rt) + "," + height + ")");
+        "translate(" + x_2(d.rt) + "," + height + ")");
   
    focuschart.selectAll(".circle")
     .attr("transform", 
-    "translate(" + x(d.rt) + "," + y(d.p) + ")");
+    "translate(" + x_2(d.rt) + "," + y(d.p) + ")");
   
    focuschart.select("text")
     .attr("transform", 
-      "translate(" + x(d.rt) + "," + (height) + ")")
+      "translate(" + x_2(d.rt) + "," + (height) + ")")
     .text(dateFormat(d.rt));
   }
  }
@@ -542,10 +530,28 @@ function updatePoints(data) {
 }
  
 
-// Table 
+// Table
+
 d3.json('outputj.json', function (error,data) {
+
+  // var $dropdownSelector = document.querySelector('.group-select');
+  // var filtereddata = getFilteredDataTable(data, $dropdownSelector.value);
+  // filtereddata = filtereddata.sort(sortByDateAscending);
+  // console.log(filtereddata);
+
+  // $dropdownSelector.onchange = function (e) {
+  //   var group = e.target.value;
+  //   var changeData = getFilteredDataTable(data, group);
+  //   retabulate(changeData, ['Date', 'close','Ticker','high','high_low','open','adj_close']);
+  // }
   
-  function tabulate(data, columns) {
+  // //Get a subset of the data based on the group
+  // function getFilteredDataTable(data, group) {
+  //   return data.filter(function (point) { return point.Ticker === group; });
+  // }
+
+  
+  function tabulate(groupdata, columns) {
 		var table = d3.select('#table').append('table')
 		var thead = table.append('thead')
 		var	tbody = table.append('tbody');
@@ -559,7 +565,7 @@ d3.json('outputj.json', function (error,data) {
 
 		// create a row for each object in the data
 		var rows = tbody.selectAll('tr')
-		  .data(data)
+		  .data(groupdata)
 		  .enter()
 		  .append('tr');
 
@@ -578,6 +584,35 @@ d3.json('outputj.json', function (error,data) {
 	}
 
 	// render the table(s)
-	tabulate(data, ['Date', 'close','Ticker','high','high_low','open','adj_close']); //column table
+  tabulate(data, ['Date', 'close','Ticker','high','high_low','open','adj_close']); //column table
+  
+  // function retabulate(groupdata, columns)
+  // {
+  //   console.log("Welcome.....")
+  //   var rows = table.selectAll("tbody tr")
+  //   .data(groupdata, function (d) {return d;});
+    
+  //   rows.enter()
+  //   .append('tr')
+  //   .selectAll("td")
+  //   .data(function (d) {return d.Value;})
+  //   .enter()
+  //   .append("td")
+  //   .text(function(d) { return d; });
+    
+  //   rows.exit().remove();
+    
+  //   var cells = rows.selectAll('td')
+  //   .data(groupdata)
+  //   .text(function (d) {return d;});
+    
+  //   cells.enter()
+  //   .append("td")
+  //   .text(function(d) { return d; });
+    
+  //   cells.exit().remove();
+  // }
 
 });
+
+
